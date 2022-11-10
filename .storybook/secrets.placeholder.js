@@ -26,7 +26,9 @@ export const AuthenticationParameters = {
             redirectUri: 'REDIRECTURI_PLACEHOLDER',
             tenantId: 'TENANTID_PLACEHOLDER',
             uniqueObjectId: 'UNIQUE_OBJECTID_PLACEHOLDER'
-        }
+        },
+        username:"USERNAME",
+        password:"PASSWORD"
     },
     adx: {
         clusterUrl: 'ADX_CLUSTER_URL',
@@ -47,6 +49,8 @@ export const AuthenticationParameters = {
             clientId: 'CLIENTID_PLACEHOLDER',
             scope: 'SCOPE_PLACEHOLDER',
             redirectUri: 'REDIRECTURI_PLACEHOLDER'
-        }
+        },
+        username:"USERNAME",
+        password:"PASSWORD"
     }
 };

@@ -50,7 +50,7 @@ const DataPusherCard = ({
     localeStrings,
     theme,
     adapter,
-    initialInstanceUrl = '<your_adt_instance_url>.digitaltwins.azure.net',
+    initialInstanceUrl = 'hm-digital-instance.api.eus.digitaltwins.azure.net',
     disablePastEvents = false
 }: IDataPusherProps) => {
     const { t } = useTranslation();

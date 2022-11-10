@@ -11,21 +11,23 @@ export default class MsalAuthService implements IAuthService {
     private executeGetTokenSequentially = true;
     private authContextConfig;
     private authContext;
+    private userAccount;
 
     private environmentToConstantMapping: IEnvironmentToConstantMapping = {
-        authority: 'https://login.microsoftonline.com/organizations',
+        authority:
+            'https://login.microsoftonline.com/77428205-87ff-4048-a645-91b337240228',
 
         // valid redirect URI for this is client ID is https://adtexplorer-tsi-local.azurewebsites.net
         // modify hosts file accordingly
-        clientId: 'e7e88070-28a1-43a3-9704-d8b986eb5f60',
+        clientId: '130b94a5-c42b-45cb-8b11-3cf44beb0f52',
 
-        scope: 'https://api.timeseries.azure.com/.default',
+        // scope: 'https://api.timeseries.azure.com/.default',
 
-        redirectUri: window.location.protocol + '//' + window.location.hostname
+        redirectUri: window.location.protocol + '//' + window.location.hostname,
 
         // // The resource URI for ADT should NOT end with a trailing slash as it will cause
         // // authentication to fail.
-        // scope: 'https://digitaltwins.azure.net/.default'
+        scope: 'https://digitaltwins.azure.net/.default'
     };
 
     constructor(environmentToConstantMapping?: IEnvironmentToConstantMapping) {
@@ -51,7 +53,6 @@ export default class MsalAuthService implements IAuthService {
 
     public login = () => {
         this.isLoggingIn = true;
-
         const accounts = this.authContext.getAllAccounts();
         if (accounts.length) {
             this.authContext.setActiveAccount(accounts[0]);
@@ -60,10 +61,13 @@ export default class MsalAuthService implements IAuthService {
         } else {
             this.authContext
                 .loginPopup()
-                .then(() => {
+                .then((res) => {
+                    console.log(res);
+                    // return this.authContext.acquireTokenSilent();
                     // In case multiple accounts exist, you can select
                     const currentAccounts = this.authContext.getAllAccounts();
                     this.authContext.setActiveAccount(currentAccounts[0]);
+                    console.log(currentAccounts[0]);
                     this.isLoggingIn = false;
                     this.shiftAndExecuteGetTokenCall();
                 })

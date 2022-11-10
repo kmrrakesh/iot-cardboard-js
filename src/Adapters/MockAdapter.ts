@@ -113,9 +113,9 @@ export default class MockAdapter
     private isDataStatic;
     public scenesConfig: I3DScenesConfig;
     private mockEnvironmentHostName =
-        'mockADTInstanceResourceName.api.wcus.digitaltwins.azure.net';
+        'hm-digital-instance.api.eus.digitaltwins.azure.net';
     private mockContainerUrl =
-        'https://mockStorageAccountName.blob.core.windows.net/mockContainerName';
+        'https://hmstore1.blob.core.windows.net/hmscene';
     private mockADXConnectionInformation: IADXConnection;
     private seededRng = seedRandom('cardboard seed');
     private mockTwinPropertiesMap: {

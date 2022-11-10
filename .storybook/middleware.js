@@ -71,6 +71,9 @@ module.exports = function (app) {
         let xAdtHostHeader = req.headers['x-adt-host'].toLowerCase();
         let adtUrl = `https://${xAdtHostHeader}/`;
         let adtUrlObject = new URL(adtUrl);
+        adtUrlObject.username="rakesh.kumar6@happiestminds.com";
+        adtUrlObject.password="Mercury@2022";
+        console.log(adtUrlObject);
         if (
             validAdtHostSuffixes.some(
                 (suffix) =>
@@ -124,6 +127,10 @@ module.exports = function (app) {
             const blobHost = req.headers['x-blob-host'];
             const blobHostUrl = `https://${blobHost}/`;
             const blobHostUrlObject = new URL(blobHostUrl);
+            blobHostUrlObject.username="rakesh.kumar6@happiestminds.com";
+            blobHostUrlObject.password="Mercury@2022";
+            console.log(blobHostUrl);
+            
             if (
                 validBlobHostSuffixes.some(
                     (suffix) =>

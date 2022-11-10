@@ -3,7 +3,7 @@ import { AdtPusherSimulationType } from '../../Models/Constants';
 import { dataPusherActionType, IDataPusherState } from './DataPusher.types';
 
 export const defaultAdtDataPusherState: IDataPusherState = {
-    instanceUrl: '<your_adt_instance_url>.digitaltwins.azure.net',
+    instanceUrl: 'hm-digital-instance.api.eus.digitaltwins.azure.net',
     daysToSimulate: 7,
     dataSpacing: 60000,
     quickStreamFrequency: 1000,
